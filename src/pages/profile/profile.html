@@ -1,0 +1,82 @@
+
+<ion-header >
+
+  <ion-navbar color="primary">
+    <ion-title >My Profile</ion-title>
+      <ion-buttons end (click)="editProfile()">
+      <button ion-button icon-only color="royal">
+        <ion-icon name="md-settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+<ion-list>
+	<ion-list-header color="light">
+    Profile
+  </ion-list-header>
+  <ion-item >
+  	<h3>Firstname</h3>
+    <p>{{ firstname }}</p>
+  </ion-item>
+  <ion-item>
+  	<h3>Lastname</h3>
+    <p>{{ lastname }}</p>  	
+  </ion-item>
+  <ion-item>
+  	<h3>Email</h3>
+    <p>{{ email }}</p>  	
+  </ion-item>
+  <ion-item>
+  	<h3>Phone number</h3>
+    <p>{{ phone }}</p>  	
+  </ion-item>
+  <ion-item>
+  	<h3>Address</h3>
+    <p>{{ address }}</p>  	
+  </ion-item>
+</ion-list>
+
+<ion-list>
+	<ion-list-header color="light">
+    Health Record
+  </ion-list-header>
+  <ion-item>
+  	<h3>Passport / ID card</h3>
+    <p>{{ id_card }}</p>
+  </ion-item>
+  <ion-item>
+  	<h3>Birthday</h3>
+    <p>{{ birthday }}</p>  	
+  </ion-item>
+  <ion-item>
+  	<h3>Gender</h3>
+    <p>{{ gender }}</p>  	
+  </ion-item>
+  <ion-item>
+  	<h3>Contact person</h3>
+    <p>{{ contact_person }}</p>  	
+  </ion-item>
+  <ion-item>
+  	<h3>Relationship</h3>
+    <p>{{ relationship }}</p>  	
+  </ion-item>
+  <ion-item>
+  	<h3>Contact person phone</h3>
+    <p>{{ contact_person_phone }}</p>  	
+  </ion-item>
+  <ion-item>
+  	<h3>Allergy</h3>
+    <p>{{ allergy }}</p>  	
+  </ion-item>
+  <ion-item>
+  	<h3>Chronic diseases</h3>
+    <p>{{ chronic_diseases }}</p>  	
+  </ion-item>
+</ion-list>
+
+</ion-content>

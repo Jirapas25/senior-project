@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <ion-row>   
+      <div class="menu" style="background-color: #42A5F5" align="center"  (click)="doFindClinic()">
+        <img src="assets/icon/map.png" style="margin-bottom: 40%;">
+        <div class="menu-second" style="background-color: white">
+          Find Near Clinic
+        </div>
+      </div>
+      <div class="menu" style="background-color: #FF7043" align="center"  (click)="doMyAppointment()">
+        <img src="assets/icon/calendar.png" style="margin-bottom: 40%;">
+        <div class="menu-second" style="background-color: white">
+          My Appointment
+        </div>
+      </div>
+  </ion-row>
+  <ion-row>
+      <div class="menu" style="background-color: #26A69A" align="center"  (click)="doMyProfile()">
+        <img src="assets/icon/user.png" style="margin-bottom: 40%;">
+        <div class="menu-second" style="background-color: white">
+          My Profile
+        </div> 
+      </div>
+      <div class="menu" style="background-color: #FFCA28" align="center"  (click)="doLogOut()">
+        <img src="assets/icon/logout.png" style="margin-bottom: 40%;">
+        <div class="menu-second" style="background-color: white">
+          Log Out
+        </div>
+      </div>
+  </ion-row>
+</ion-content>

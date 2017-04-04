@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="cBlueGray">
+    <ion-title>Booking</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div id="upper">
+    <ion-row>
+      <ion-col col-2>
+        <button ion-button clear icon-left (click) = "getYesterday()">
+          <ion-icon name='ios-arrow-back-outline' is-active="false"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-8>
+        <h3>{{myDate.getDate()}} {{months[myDate.getMonth()]}} {{myDate.getFullYear()}}</h3>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button clear icon-left (click) = "getTomorow()">
+          <ion-icon name='ios-arrow-forward-outline' is-active="false"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </div>
+<!--
+  <div id="second">
+    <ion-row>
+      <ion-col id="second-left">
+        <h3>0</h3>
+        <p>Total Booking</p>
+      </ion-col>
+      <ion-col id="second-right">
+        <h3>0</h3>
+        <p>Available</p>
+      </ion-col>
+    </ion-row>
+  </div>
+  -->
+
+  <div id="slot" padding style="background-color: #CFD8DC" >
+    
+    <div id="slot-content" padding  style="background-color: white" align="center">
+    <p>Available time slots</p>
+    <ion-list>
+      <button ion-button class="button-slot" *ngFor="let item of schedule.avail_time_slots" (click) ="confirm_booking(item)">
+        {{ item }}
+      </button>
+    </ion-list>
+  </div>
+  </div>
+
+</ion-content>

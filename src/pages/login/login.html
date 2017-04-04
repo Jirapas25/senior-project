@@ -1,0 +1,45 @@
+<!--<ion-header >
+
+  <ion-navbar color="primary">
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+
+</ion-header>-->
+
+
+
+<ion-content >
+<div id="top">
+<div id="logo" text-center>
+	<!--<img src="http://res.cloudinary.com/dlvvgckev/image/upload/v1489773686/zdoclogo_gto1wl.png" height="180" width="180">-->
+  <img src="assets/icon/logo.png">
+</div>
+</div>
+<div id="middle">
+  <ion-list>
+
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input [(ngModel)]="user" type="text" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input [(ngModel)]="pass"  type="password" value=""></ion-input>
+  </ion-item>
+
+   <ion-toolbar id="toolcus" text-center padding-left padding-right>
+      <button ion-button class="button-login"  (click)="doLogin()">Sign In</button>
+  </ion-toolbar>
+  <ion-toolbar text-center padding-left padding-right>
+      <button ion-button class="button-signup"   (click)="doRegister()">Create an Account</button>
+  </ion-toolbar>
+  
+
+</ion-list>
+
+</div>
+
+
+</ion-content>
+

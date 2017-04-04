@@ -1,0 +1,55 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Create Account</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content id="masters" >
+
+<ion-list>
+  <ion-item>
+    <ion-label >Firstname</ion-label>
+    <ion-input [(ngModel)]="fname" type="text" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label >Lastname</ion-label>
+    <ion-input [(ngModel)]="lname" type="text" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label >Username</ion-label>
+    <ion-input [(ngModel)]="user" type="text" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label >Password</ion-label>
+    <ion-input [(ngModel)]="pass" type="password" value=""></ion-input>
+  </ion-item>
+
+  <ion-item>
+  <ion-label >Birthday</ion-label>
+	  <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="MMM-DD-YYYY" [(ngModel)]="birthday"></ion-datetime>
+	</ion-item>
+
+  <ion-item>
+    <ion-label >Gender</ion-label>
+    <ion-select [(ngModel)]="gender">
+      <ion-option value="Male">Male</ion-option>
+      <ion-option value="Female">Female</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+   <ion-toolbar text-center padding-left padding-right>
+      <button ion-button color="danger" full round (click)="register()">Continue</button>
+  </ion-toolbar>
+
+</ion-list>
+
+
+</ion-content>

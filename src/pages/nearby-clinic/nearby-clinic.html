@@ -1,0 +1,118 @@
+<ion-header >
+<!--<div style="width:100%;height:60px;background-color:yellowgreen">
+
+  <ion-row>
+    <ion-col col-3>    
+      <button ion-button menuToggle item-left>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-col>
+    <ion-col col-6>    
+      <h4>nearby Clinic</h4>
+    </ion-col>
+  </ion-row>
+
+</div>-->
+
+
+  <ion-navbar color="cBlueGray" >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Find Near Clinic</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="homeSegment" (click)="updatePage(homeSegment)">
+      <ion-segment-button value="Map">
+        <ion-icon name="map" color="cBlueGray"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="List">
+        <ion-icon name="md-list" color="cBlueGray"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+<div [ngSwitch]="homeSegment" style="height:100%;">
+  <!--<ion-list *ngSwitchCase="'Map'" #map id='map' style="height:100%;">
+  </ion-list>
+  <ion-toolbar>
+    	<ion-title>Footer</ion-title>
+  </ion-toolbar>-->
+  <ion-list *ngSwitchCase="'Map'" style="height:85%;">
+
+  	<div #map id='map' style="height:100%;" >
+  	</div>
+  	<!--<ion-toolbar>
+    	<p id="item"></p>
+      <ion-buttons end>
+         <button ion-button icon-right color="royal" (click)="viewDetail()">
+           view
+         </button>
+       </ion-buttons>
+  	</ion-toolbar>-->
+    <div id="detail">
+      <!--<ion-row>    
+ 
+        <ion-col width-60>
+           <p id="item"></p>
+        </ion-col>
+        <ion-col width-20 padding>
+           <button ion-button>
+            view
+          </button>
+        </ion-col>
+      </ion-row>-->
+  <ion-list>
+  <ion-item>
+     
+     <h4 id="item" padding-right padding-left></h4>
+     <p id="hours" padding-right padding-left></p>
+     <p id="distance" padding-right padding-left></p>
+    <button ion-button clear icon-left item-right (click)="viewDetail()">
+        <ion-icon name='ios-arrow-forward-outline' is-active="false"></ion-icon>
+    </button>
+  </ion-item>
+</ion-list>
+
+      
+    </div>
+  </ion-list>
+
+  	<!--<div #map id='map' style="height:100%;">
+  		<ion-list *ngSwitchCase="'map'">  </ion-list>
+  	</div>-->
+
+
+  <ion-list *ngSwitchCase="'List'">
+    <ion-item-sliding *ngFor="let item of clinic">
+	  <ion-item >
+      <ion-avatar  item-left>
+        <img src="assets/icon/doctor.png">
+      </ion-avatar >
+      <h3>{{ item.clinic_name }}</h3>
+      <p>opening hours {{ item.open }}-{{ item.close }} </p>
+      <p>dintance {{ item.distance }} km.</p>
+      <!--<button color="button-green" ion-button (click)="doBooking()">Appointment</button>-->
+      <!--<button color="button-green" ion-button outline (click)="itemTapped($event, item)">More Detail</button>-->
+  	</ion-item>
+      <ion-item-options>
+        <button ion-button color="light" icon-left (click)="itemTapped($event, item)">
+          <ion-icon name="ios-more"></ion-icon>
+          More
+        </button>
+        <button ion-button color="button-a" icon-left (click)="doBooking()">
+          <ion-icon name="md-calendar"></ion-icon>
+          Book
+        </button>
+      </ion-item-options>
+     </ion-item-sliding>
+  </ion-list>
+</div>
+
+</ion-content>

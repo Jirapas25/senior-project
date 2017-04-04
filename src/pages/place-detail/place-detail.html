@@ -1,0 +1,97 @@
+
+<ion-header >
+
+  <ion-navbar color="detail" >
+    <ion-title>More Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<!--
+<ion-card >
+
+<img id="mapPic" src="" >
+
+  <ion-item text-wrap>
+  	<ion-avatar item-left>
+      <img src="http://res.cloudinary.com/dis7worr4/image/upload/v1490162147/hospital_o32lb4.png">
+    </ion-avatar>
+    <h2>{{ title }}</h2>
+  </ion-item>
+
+</ion-card>
+<ion-card>
+  <ion-item>
+    <ion-icon name="ios-call-outline" item-left large></ion-icon>
+    <h4>{{ phone }}</h4>
+  </ion-item>
+
+
+<ion-list>
+  <ion-item text-wrap>
+    <ion-icon name="ios-pin-outline" item-left large></ion-icon>
+    <h4>{{ address }}</h4>
+  </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-item>
+    <ion-icon name="ios-time-outline" item-left large></ion-icon>
+    <h4>open time today 8.00 - 16.00</h4>
+  </ion-item>
+</ion-list>
+</ion-card>
+-->
+<div id= "bar">
+
+<div id="bg" padding-left padding-right>
+    <ion-avatar item-left id="avat">
+      <img src="assets/img/pictures.png" height="100px" width="100px">
+    </ion-avatar>
+    <h1>{{ title }}</h1>
+
+</div>
+<div id="detail-header">
+  Contact Information
+</div>
+ <ion-fab right middle>
+    <button ion-fab class="fab" (click) = "doBooking()"><ion-icon name="md-calendar" ></ion-icon></button>
+  </ion-fab>
+
+<div>
+    <ion-item >
+      <img src="assets/icon/mail.png" item-left padding-right>
+      <p>{{ email }}</p>
+    </ion-item>
+    <ion-item >
+      <img src="assets/icon/call-button.png" item-left padding-right>
+      <p>{{ phone }}</p>
+    </ion-item>
+    <ion-item text-wrap >
+      <img src="assets/icon/addr.png" item-left padding-right>
+      <p>{{ address }}</p>
+    </ion-item>
+</div>
+
+<div id="detail-header-second">
+  Working Hours
+</div>
+  <ion-item>
+    <img src="assets/icon/mon.png" item-left padding-right>
+    <p>Monday 8.00 - 20.00</p>
+  </ion-item>
+  <ion-item>
+    <img src="assets/icon/tue.png" item-left padding-right>
+    <p>Tuesday 8.00 - 20.00</p>
+  </ion-item>
+  <ion-item>
+    <img src="assets/icon/wed.png" item-left padding-right>
+    <p>Wednesday 8.00 - 20.00</p>
+  </ion-item>
+
+</div>
+</ion-content>
+
+

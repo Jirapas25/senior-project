@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>profile-edit</ion-title>
+     <ion-buttons end (click)="updateUser()">
+      <button ion-button icon-only color="royal">
+        <ion-icon name="md-checkmark-circle-outline"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-list>
+	<ion-list-header color="light">
+    Profile
+  </ion-list-header>
+  <ion-item>
+
+  	<ion-label  >Firstname</ion-label>
+    <ion-input  [(ngModel)]="firstname" type="text" value=""></ion-input>
+  </ion-item>
+    <ion-item>
+  	<ion-label >Lastname</ion-label>
+    <ion-input [(ngModel)]="lastname" type="text" value=""></ion-input>
+  </ion-item>
+    <ion-item>
+  	<ion-label >Email</ion-label>
+    <ion-input [(ngModel)]="email" type="text" value=""></ion-input>
+  </ion-item>
+    <ion-item>
+  	<ion-label >Phone number</ion-label>
+    <ion-input [(ngModel)]="phone" type="text" value=""></ion-input>
+  </ion-item>
+   <ion-item>
+   <ion-label >Address</ion-label>
+   <ion-textarea [(ngModel)]="address"></ion-textarea>
+ </ion-item>
+</ion-list>
+
+<ion-list>
+	<ion-list-header color="light">
+    Health Record
+  </ion-list-header>
+  <ion-item>
+  	<ion-label >Passport / ID card</ion-label>
+    <ion-input [(ngModel)]="id_card" type="text" value=""></ion-input>
+  </ion-item>
+    <ion-item>
+  	<ion-label >Birthday</ion-label>
+    <ion-input [(ngModel)]="birthday" type="text" value=""></ion-input>
+  </ion-item>
+    <ion-item>
+  	<ion-label >Gender</ion-label>
+    <ion-input [(ngModel)]="gender" type="text" value=""></ion-input>
+  </ion-item>
+    <ion-item>
+  	<ion-label >Contact person</ion-label>
+    <ion-input [(ngModel)]="contact_person" type="text" value=""></ion-input>
+  </ion-item>
+    <ion-item>
+  	<ion-label >Relationship</ion-label>
+    <ion-input [(ngModel)]="relationship" type="text" value=""></ion-input>
+  </ion-item>
+    <ion-item>
+  	<ion-label >Contact person phone</ion-label>
+    <ion-input [(ngModel)]="contact_person_phone" type="text" value=""></ion-input>
+  </ion-item>
+    <ion-item>
+  	<ion-label >Allergy</ion-label>
+    <ion-input [(ngModel)]="allergy" type="text" value=""></ion-input>
+  </ion-item>
+   <ion-item>
+  	<ion-label >Chronic diseases</ion-label>
+    <ion-input [(ngModel)]="chronic_diseases" type="text" value=""></ion-input>
+  </ion-item>
+</ion-list>
+
+</ion-content>
+

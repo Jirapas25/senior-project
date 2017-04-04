@@ -1,0 +1,20 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Appointment</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <ion-list>
+	  <ion-item *ngFor="let item of appointment" >
+      <h2>{{item.username }}</h2>
+      <p>{{item.time }}</p>
+      <p>{{item.description }}</p>
+  	</ion-item>
+  </ion-list>
+
+</ion-content>
