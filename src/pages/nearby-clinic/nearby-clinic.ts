@@ -292,9 +292,10 @@ calDistance(parm) {
 		});
 	}
 
-	doBooking() {
-		this.navCtrl.push(BookingPage);
-
+	doBooking(event, item) {
+		this.navCtrl.push(BookingPage, {
+		place: item
+	});
 	}
 
 
