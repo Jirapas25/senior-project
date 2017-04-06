@@ -13,6 +13,7 @@ import { ProfileEditPage } from '../pages/profile-edit/profile-edit';
 import { BookingPage } from '../pages/booking/booking';
 import { HomePage } from '../pages/home/home';
 import { HistoryPage } from '../pages/history/history';
+import {CallNumber} from '@ionic-native/call-number';
 
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
@@ -56,6 +57,6 @@ const cloudSettings: CloudSettings = {
     HomePage,
     HistoryPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, CallNumber]
 })
 export class AppModule {}

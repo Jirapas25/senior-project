@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
+import {CallNumber} from '@ionic-native/call-number';
 import { BookingPage } from '../booking/booking';
-
+declare var window;
 @Component({
   selector: 'page-place-detail',
   templateUrl: 'place-detail.html'
+	
 })
+
 export class PlaceDetailPage {
 	place: any;
 	lat: any;
@@ -19,10 +22,10 @@ export class PlaceDetailPage {
 	myDate: String = new Date().toISOString();
 	email: any;
 
-  constructor(public plt: Platform, public navCtrl: NavController, public navParams: NavParams) 
+  constructor(private callNumber: CallNumber, public plt: Platform, public navCtrl: NavController, public navParams: NavParams) 
   {
   	this.plt.ready().then((readySource) => {
-		  //test
+		  //test private callNumber: CallNumber
 		  this.lat = "7.8";
 		  this.lng = "98.7";
 	    console.log('ionViewDidLoad PlaceDetailPage');
@@ -48,6 +51,16 @@ export class PlaceDetailPage {
 		place: this.place
 	});
   }
+
+	callIT(passedNumber) {
+  	//window.location = passedNumber;
+		window.open(passedNumber, '_system')
+	}
  
+ call() {
+	this.callNumber.callNumber('0901752973', true)
+  .then(() => console.log('Launched dialer!'))
+  .catch(() => console.log('Error launching dialer'));
+ }
 
 }

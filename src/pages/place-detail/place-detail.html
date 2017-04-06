@@ -65,9 +65,10 @@
       <img src="assets/icon/mail.png" item-left padding-right>
       <p>{{ email }}</p>
     </ion-item>
-    <ion-item >
+    <ion-item (click)="call()">
       <img src="assets/icon/call-button.png" item-left padding-right>
       <p>{{ phone }}</p>
+      <ion-icon name="ios-call-outline" item-right></ion-icon>
     </ion-item>
     <ion-item text-wrap >
       <img src="assets/icon/addr.png" item-left padding-right>
@@ -90,6 +91,16 @@
     <img src="assets/icon/wed.png" item-left padding-right>
     <p>Wednesday 8.00 - 20.00</p>
   </ion-item>
+
+  <!--<ion-item>
+    <img src="assets/icon/wed.png" item-left padding-right>
+    <button ion-button (click)="callIT('tel: 0901752973')">call function</button>
+  </ion-item>
+
+    <ion-item>
+    <img src="assets/icon/wed.png" item-left padding-right>
+    <button ion-button (click)="call()">call</button>
+  </ion-item>-->
 
 </div>
 </ion-content>
