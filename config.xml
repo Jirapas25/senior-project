@@ -6,8 +6,8 @@
   <content src="index.html"/>
   <access origin="*"/>
   <access origin="tel:*" launch-external="yes"/>
+  <allow-navigation href="*"/>
   <allow-navigation href="http://ionic.local/*"/>
-  <allow-navigation href="http://172.16.131.108:8100"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
@@ -21,7 +21,7 @@
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
   </platform>
-  <preference name="LoadUrlTimeoutValue" value="700000" />
+  <preference name="LoadUrlTimeoutValue" value="700000"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

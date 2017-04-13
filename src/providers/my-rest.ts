@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+
 @Injectable()
 export class MyRest {
   near_place: any;
@@ -212,4 +213,37 @@ export class MyRest {
     })
 
 }
+
+  pushNotification() {
+    if (this.fake == 1) {
+      return Promise.resolve("fake")
+    } return new Promise(resolve => {
+      this.http.get('https://fast-taiga-61275.herokuapp.com/push/')
+        .map(res => res.json().success)
+        .subscribe(data => {
+          resolve(data);
+        })
+    })
+  }
+
+  addNotification(dataset) {
+   let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({
+      headers: headers
+    });
+    return new Promise(resolve => {
+      this.http.post('https://fast-taiga-61275.herokuapp.com/notification', JSON.stringify(dataset), options)
+        .map(res => res.json().success)
+        .subscribe(data => {
+          resolve(data);
+        })
+    })
+  }
+
+  upload_photo() {
+
+  }
+
 }

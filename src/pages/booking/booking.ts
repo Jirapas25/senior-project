@@ -3,6 +3,7 @@ import { ModalController, NavController, NavParams } from 'ionic-angular';
 import { Platform } from 'ionic-angular';
 import { MyRest } from '../../providers/my-rest';
 import { HomePage } from '../home/home';
+import { Page1 } from '../page1/page1';
 import { Events } from 'ionic-angular';
 
 @Component({
@@ -18,13 +19,13 @@ export class BookingPage {
   
 
   days = [
-    'Sun', //Sunday starts at 0
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat'
+    'Sunday', //Sunday starts at 0
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
   ];
   slot = [
     "07:00",
@@ -106,6 +107,7 @@ export class BookingPage {
     let profile = localStorage.getItem('currentLogin');
     let dataset = {
       date: this.schedule.date,
+      show_date: this.days[this.myDate.getDay()]+" "+this.months[this.myDate.getMonth()]+", "+this.myDate.getFullYear(),
       time: time,
       status: "booked",
       description: "blaaaa",
@@ -133,7 +135,28 @@ export class BookingPage {
             this.events.publish('reloadPage');
 		  		}else {
 		      	console.log('Booking successful');
-            alert("Booking successful");
+            //alert("Booking successful");
+            /*this.placeService.pushNotification().then((data) => {
+              if(data == "success"){ 
+                console.log("push success");
+              }else {
+                console.log("push fail");
+              }
+            })*/
+            let noti_detail = {
+              receive_token: this.schedule.username,
+              msg_text: "New Booking! "+dataset.date+" "+dataset.time
+            }
+            this.placeService.addNotification(noti_detail).then((data) => {
+              if(data){ 
+                console.log("add noti success");
+              }else {
+                console.log("add noti fail");
+              }
+            })
+
+            let modal = this.modalCtrl.create(Page1, {data:dataset});
+            modal.present();
             this.events.publish('reloadPage');
 		  		}
 		  		console.log(data);
